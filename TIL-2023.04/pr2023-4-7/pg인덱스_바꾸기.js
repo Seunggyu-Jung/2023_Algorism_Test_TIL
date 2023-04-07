@@ -14,3 +14,17 @@ function solution(my_string, num1, num2) {
     }
     return answer;
 }
+
+
+// 구조 분해 할당 풀이법
+function solution(my_string, num1, num2) {
+    my_string = my_string.split("");
+    [my_string[num1],my_string[num2]] = [my_string[num2],my_string[num1]]
+    return my_string.join("");
+}
+
+// map 메서드 사용방식
+function solution(my_string, num1, num2) {
+    my_string = my_string.split("")
+    return my_string.map((v,i) => i === num1 ? my_string[num2] : i === num2 ? my_string[num1] : v).join("");
+}

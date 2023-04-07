@@ -16,3 +16,10 @@ function solution(s) {
     }
     return answer;
 }
+
+// for문을 사용하지 않은 풀이
+function solution(s) {
+    s = s.split("").sort()
+    return s.filter((v,i) => s[i-1] != s[i] && s[i] != s[i+1])
+            .join("");
+}
