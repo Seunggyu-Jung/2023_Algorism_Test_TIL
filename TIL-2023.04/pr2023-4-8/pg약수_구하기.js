@@ -9,3 +9,11 @@ function solution(n) {
     }
     return answer;
 }
+
+// for 문이 아닌 풀이
+
+function solution(n) {
+    return Array(n).fill(0)
+                   .map((v,i) => i+1)
+                   .filter((el) => n % (el) === 0);
+}
