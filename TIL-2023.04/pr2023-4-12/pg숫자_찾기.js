@@ -19,5 +19,5 @@ function solution(num, k) {
     return num.toString()
               .split("")
               .map((el) => Number(el))
-              .indexOf(k) + 1 || -1  // + 1 || -1 이부분이 이해가 가지 않는다.
+              .indexOf(k) + 1 || -1  // 인덱스가 -1인 경우, +1로 인해 0이 된다. 그러면, 암묵적으로 false이기 때문에 논리 연산자 || 로 인해 우항인 -1을 반환한다.
 }
