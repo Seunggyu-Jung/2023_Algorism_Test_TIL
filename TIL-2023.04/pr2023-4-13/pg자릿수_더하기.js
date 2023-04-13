@@ -7,3 +7,12 @@ function solution(n) {
             .split("")
             .reduce((a,c) => a + parseInt(c) ,0);
 }
+
+// for문을 사용한 풀이
+function solution(n) {
+    let answer = 0;
+    for (let i of n.toString().split("")){
+        answer += parseInt(i)
+    }
+    return answer;
+}
