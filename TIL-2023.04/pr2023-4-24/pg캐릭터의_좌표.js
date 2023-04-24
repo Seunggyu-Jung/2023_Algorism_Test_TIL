@@ -41,7 +41,7 @@ function solution(keyinput, board) {
         if (mid[1] > -end[1]){
             mid[1] -= 1;
         }
-        break;  // break는 case와 같은 위치에 있어야 switch문을 탈출할 수 있다.
+        break;  // break는 case와 같은 위치에 있어야 switch문을 탈출할 수 있다. // add a break statement after each case block
         
     case "up" :
         if (mid[1] < end[1]){
