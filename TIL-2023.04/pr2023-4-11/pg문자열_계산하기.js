@@ -12,3 +12,6 @@ function solution(my_string) {
     }
     return  answer;
 }
+
+// reduce 풀이법
+
