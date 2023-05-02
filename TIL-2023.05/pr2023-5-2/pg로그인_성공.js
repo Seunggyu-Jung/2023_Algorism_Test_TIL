@@ -1,0 +1,25 @@
+// 머쓱이가 입력한 아이디와 패스워드가 담긴 배열 id_pw와 회원들의 정보가 담긴 2차원 배열 db가 주어질 때, 다음과 같이 로그인 성공, 실패에 따른 메시지를 return하도록 solution 함수를 완성해주세요.
+// 아이디와 비밀번호가 모두 일치하는 회원정보가 있으면 "login"을 return합니다.
+// 로그인이 실패했을 때 아이디가 일치하는 회원이 없다면 “fail”를, 아이디는 일치하지만 비밀번호가 일치하는 회원이 없다면 “wrong pw”를 return 합니다.
+
+
+// 처음 풀이한 방식 : for of문을 활용한 풀이
+function solution(id_pw, db) {
+    for (let i of db){
+        if (id_pw[0] === i[0] && id_pw[1] === i[1]) {
+            return "login"
+        } else if (id_pw[0] === i[0] && id_pw[1] !== i[1]) {
+            return "wrong pw"
+        } 
+    }
+    return "fail"
+}
+
+
+// Map 생성자 함수로 풀이한 방식
+
+function solution(id_pw, db) {
+    const [id, pw] = id_pw;  // 전개구문으로 아이디와 비밀번호를 뽑아냄
+    const map = new Map(db);  // Map 생성자 함수로 변환 -> 객체 형태로 바뀌게 됨
+    return map.has(id) ? (map.get(id) === pw ? 'login' : 'wrong pw') : 'fail';  // get메서드는 map의 메서드로, Map의 '값'에 접근함(pw)
+  }
