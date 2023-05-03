@@ -33,3 +33,17 @@ function solution(quiz) {
 
 // 구조분해할당으로 푸는 방법
 
+function solution(quiz) {
+    let answer = [];
+     quiz.map(item => { // 배열을 순회할 때, for문을 안쓰고 {}와 map으로 순회 가능 
+        let hole = 0
+        const [x, sign, y, _ , z] = item.split(" ") 
+        if (sign === "+"){
+           hole += +x + +y
+        } else if (sign === "-"){
+            hole += +x - +y
+        }
+        answer.push(hole === +z ? "O" : "X")
+        });
+    return answer;
+}
