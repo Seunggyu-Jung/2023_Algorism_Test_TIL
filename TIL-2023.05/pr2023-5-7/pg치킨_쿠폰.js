@@ -3,10 +3,10 @@
 
 function solution(chicken) {
     let service = 0;
-    let coupon = chicken;
-    while(coupon >= 10) {
-        service += parseInt(coupon / 10)
-        coupon = parseInt(coupon / 10) + parseInt(coupon%10)
+    let coupon = chicken;  // 치킨의 수와 쿠폰의 수는 같다.
+    while(coupon >= 10) {  // 쿠폰이 10장 미만이면 아무 의미 없다
+        service += parseInt(coupon / 10)  // 쿠폰 10장당 먹을 수 있는 서비스 치킨의 수
+        coupon = parseInt(coupon / 10) + parseInt(coupon%10) // 쿠폰 10장당 먹을 수 있는 서비스 치킨의 수만큼 나온 새로운 쿠폰 + 나머지 쿠폰
     }
     return service;
 }
