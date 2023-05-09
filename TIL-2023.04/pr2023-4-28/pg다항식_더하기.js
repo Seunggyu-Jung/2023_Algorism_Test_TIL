@@ -26,3 +26,5 @@ function solution(polynomial) {
     }
     return answer;
 }
+
+// 조원 풀이법 참고
