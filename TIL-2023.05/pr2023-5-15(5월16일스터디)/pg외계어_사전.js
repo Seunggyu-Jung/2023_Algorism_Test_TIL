@@ -13,3 +13,10 @@ function solution(spell, dic) {
     }
     return answer;
 }
+
+
+// every 풀이
+
+function solution(spell, dic) {
+    return dic.some(el => spell.every(val => el.includes(val))) ? 1 : 2
+ } // dic 원소 중 하나라도 spell이 모두 포함되어 있다면 1을 하나도 없다면 2를 반환
