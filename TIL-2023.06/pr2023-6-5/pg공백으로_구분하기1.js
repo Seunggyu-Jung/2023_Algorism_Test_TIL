@@ -6,4 +6,19 @@ function solution(my_string) {
   return my_string.split(' ');
 }
 
-//
+// for문 사용 -> 비효율적
+
+function solution(my_string) {
+  let answer = [];
+  let i = '';
+  for (let j = 0; j < my_string.length; j++) {
+    if (my_string[j] !== ' ') {
+      i += my_string[j];
+    } else if (my_string[j] === ' ') {
+      answer.push(i);
+      i = '';
+    }
+  }
+  answer.push(i);
+  return answer;
+}
