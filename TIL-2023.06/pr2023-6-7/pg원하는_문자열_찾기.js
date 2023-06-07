@@ -4,3 +4,9 @@
 function solution(myString, pat) {
   return myString.toUpperCase().includes(pat.toUpperCase()) ? 1 : 0;
 }
+
+// split을 사용
+
+function solution(myString, pat) {
+  return myString.toUpperCase().split(pat.toUpperCase()).length > 1 ? 1 : 0;
+}
