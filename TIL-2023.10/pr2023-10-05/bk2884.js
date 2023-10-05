@@ -7,13 +7,13 @@
 
 const input = require('fs').readFileSync('예제.txt').toString().split(' ');
 
-const overTime = +input[1] + 45;
+const overTime = +input[1] - 45;
 
 let answer = '';
 
-if (overTime >= 60) {
-  answer += +input[0] + 1 + ' ';
-  answer += overTime - 60;
+if (overTime < 0) {
+  answer += +input[0] - 1 + ' ';
+  answer += 60 + overTime;
   console.log(answer);
 } else {
   answer += +input[0] + ' ';
