@@ -5,14 +5,19 @@
 // 이 방법은 단순하다. 원래 설정되어 있는 알람을 45분 앞서는 시간으로 바꾸는 것이다. 어차피 알람 소리를 들으면, 알람을 끄고 조금 더 잘 것이기 때문이다. 이 방법을 사용하면, 매일 아침 더 잤다는 기분을 느낄 수 있고, 학교도 지각하지 않게 된다.
 // 현재 상근이가 설정한 알람 시각이 주어졌을 때, 창영이의 방법을 사용한다면, 이를 언제로 고쳐야 하는지 구하는 프로그램을 작성하시오.
 
-const input = require('fs').readFileSync('예제.txt').toString().split(' ');
+// 현재 틀린 오류가 있음
+const input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
 
 const overTime = +input[1] - 45;
 
 let answer = '';
 
 if (overTime < 0) {
-  answer += +input[0] - 1 + ' ';
+  if (+input[0] - 1 < 0) {
+    answer += 23 + +input[0] + ' ';
+  } else {
+    answer += +input[0] - 1 + ' ';
+  }
   answer += 60 + overTime;
   console.log(answer);
 } else {
